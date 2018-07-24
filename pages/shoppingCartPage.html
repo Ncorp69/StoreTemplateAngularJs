@@ -1,0 +1,29 @@
+<div class="shopping-cart" ng-controller="shoppingCartController">
+    <div class="product-position col-sm-12" ng-repeat="productPosition in shoppingCart.productPositionList">
+        <div class="col-sm-3 img-container">
+            <img class="product-img" src="{{productPosition.product.imglist[0]}}" alt="no Img"/>
+        </div>
+        <div class="col-sm-9">
+            <div class="col-sm-12">
+                {{productPosition.product.productName}}
+            </div>
+            <div class="col-sm-12">
+                <div class="btn btn-default" ng-click="removePosition($index)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </div>
+                <div class="btn btn-default" ng-click="removeItemFromPosition(productPosition, $index)">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </div>
+                <div class="btn btn-default" ng-click="addItemToPosition(productPosition)">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                Стоимость: {{productPosition.productCount}} x {{productPosition.product.price}} = {{productPosition.product.price * productPosition.productCount}}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 price-summ-block">
+        Общая стоимость: {{shoppingCart.allPositionsPrice}} $
+    </div>
+</div>

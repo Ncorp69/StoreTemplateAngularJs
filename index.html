@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store-template">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+
+    <link rel="stylesheet/less" href="css/mainStyle.less">
+    <link rel="stylesheet/less" href="css/productListStyle.less">
+    <link rel="stylesheet/less" href="css/shoppingCartStyle.less">
+
+    <title>store-template</title>
+</head>
+<body>
+<div class="row">
+    <div class="main-part-container col-lg-8 col-lg-offset-2 col-xs-12">
+        <div class="top-mnu">
+            <a class="btn btn-default" href="#!/">
+                Список товаров
+                <span class="glyphicon glyphicon-th"></span>
+            </a>
+            <a class="btn btn-default" href="#!/basket">
+                Корзина
+                <span class="glyphicon glyphicon-shopping-cart"></span>
+                <span class="badge">{{shoppingCart.productPositionList.length}}</span>
+            </a>
+        </div>
+        <div class="col-xs-12">
+            <ng-view></ng-view>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="js/lib/jquery.js"></script>
+<script src="js/lib/less.min.js"></script>
+<script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular/angular-route.js"></script>
+
+<script src="js/ngApp.js"></script>
+<script src="js/ng-modules/storeModule.js"></script>
+
+<script src="js/ng-controllers/productListController.js"></script>
+<script src="js/ng-controllers/shoppingCartController.js"></script>
+
+<script src="js/ng-directives/click-copy-directive.js"></script>
+
+</html>
